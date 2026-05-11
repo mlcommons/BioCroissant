@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "biocroissant"
+version = "0.1.0"
+description = "Metadata format and tooling for biomedical and health ML datasets (BioCroissant)."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+omop = ["pandas"]
+
+[project.scripts]
+biocroissant = "biocroissant.cli.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/biocroissant"]
+
+[tool.uv]
+dev-dependencies = []
